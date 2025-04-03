@@ -3,8 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { Post } from '@/types/types';
-import { FaRegFaceSmile } from 'react-icons/fa6';
 import { RxAvatar } from 'react-icons/rx';
+import { FaRegFaceSmile } from 'react-icons/fa6';
+
 
 interface PostCardProps {
     post: Post;
