@@ -15,16 +15,12 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, post }) => {
     const baseUrl = "https://api.qumiqo.com";
 
-    // Головне зображення
     const mainImage = `${baseUrl}${post.preview.thumbnail.filename}`;
 
-    // Всі доступні зображення (включаючи мейн)
     const allImages = [mainImage, ...post.shots.map((shotId) => `${baseUrl}${shotId}.jpeg`)];
 
-    // Стан для відображення поточного зображення
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Якщо модалка закрита — просто не рендеримо контент
     if (!isOpen) return null;
 
     const handleImageClick = (index: number) => {
@@ -107,4 +103,3 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, post }) => {
 };
 
 export default Modal;
-    
