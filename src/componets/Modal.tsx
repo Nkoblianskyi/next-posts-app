@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Post } from '@/types/types';
 import { IoArrowRedoOutline } from 'react-icons/io5';
 import { BsExclamationCircle } from 'react-icons/bs';
+import { FaCircle } from 'react-icons/fa6';
 
 interface ModalProps {
     isOpen: boolean;
@@ -37,11 +38,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, post }) => {
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <header className="modal-header">
-                    <div className="modal-header-right">
-                        <h2 className="modal-title">{post.title}</h2>
-                        <span className="modal-date">{formatDate(post.createdAt)}</span>
-                    </div>
                     <div className="modal-header-left">
+                        <h2 className="modal-title">{post.title}</h2>
+                        <div className="modal-date-container">
+                            <p className="modal-date">{formatDate(post.createdAt)}</p>
+                            <FaCircle size={3} color='rgba(0, 0, 0, 0.3)' />
+                            <span className="modal-date">{post.classifications}</span>
+                        </div>
+                    </div>
+                    <div className="modal-header-right">
                         <button className="modal-close-button" onClick={onClose}>
                             <IoArrowRedoOutline size={16} className="modal-close-button-icon" />
                         </button>

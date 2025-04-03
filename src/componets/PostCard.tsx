@@ -18,14 +18,14 @@ const PostCard: React.FC<PostCardProps> = ({ post, onClick }) => {
     return (
         <article className="post-card" onClick={onClick}>
             <header className="post-header">
-                <div className="post-header-right">
+                <div className="post-header-left">
                     <RxAvatar className='post-header-avatar'/>
                     <div>
                         <p className="post-title">{post.author.name}</p>
                         <span className='post-username'>@{post.author.username}</span>
                     </div>
                 </div>
-                    <button className="post-header-left">
+                    <button className="post-header-right">
                         <FaRegFaceSmile size={14}  className='post-header-button-icon' />
                     </button>
             </header>
